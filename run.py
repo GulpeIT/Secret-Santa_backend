@@ -40,5 +40,5 @@ if __name__ == "__main__":
         host=settings.app_run.host,
         port=settings.app_run.port,
         reload=True,
-        reload_delay=2.5
+        reload_delay=3
     )

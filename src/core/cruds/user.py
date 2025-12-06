@@ -1,0 +1,13 @@
+from src.core.schemas import UserBase
+
+async def create():
+    return ...
+
+async def get_by_name():
+    return ...
+
+async def login():
+    return ...
+
+async def register():
+    return ...

@@ -1,16 +1,17 @@
 from typing import TYPE_CHECKING
 from typing import List
-
 from datetime import datetime
+from src.core.models import Base
 
-from sqlalchemy import DateTime
+from sqlalchemy import (
+    DateTime,
+    UUID
+)
 from sqlalchemy.orm import (
     Mapped,
     mapped_column,
     relationship
 )
-
-from src.core.models import Base
 
 if TYPE_CHECKING:
     from core.models import UserRoomAssociation
@@ -19,7 +20,7 @@ if TYPE_CHECKING:
 class Room(Base):
     __tablename__ = "rooms"
     
-    address: Mapped[str] = mapped_column(unique=True)
+    address: Mapped[str] = mapped_column(UUID, unique=True, primary_key=True)
     created: Mapped[datetime] = mapped_column(DateTime, default=datetime.now())
     
     user_association: Mapped[List["UserRoomAssociation"]] = relationship(
@@ -27,5 +28,5 @@ class Room(Base):
     )
     
     @property
-    def user(self):
+    def users(self):
         return [assoc.user for assoc in self.user_association]

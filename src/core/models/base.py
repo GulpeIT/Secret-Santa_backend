@@ -5,7 +5,7 @@ from sqlalchemy import MetaData
 from sqlalchemy.orm import (
     DeclarativeBase,
     Mapped,
-    mapped_column
+    mapped_column,
 )
 from sqlalchemy.ext.asyncio import AsyncAttrs
 

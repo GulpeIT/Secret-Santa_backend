@@ -5,7 +5,6 @@ from .user import User
 from .room import Room
 from .user_room_association import UserRoomAssociation
 
-
 __all__ = [
     "db_helper",
     "Base",

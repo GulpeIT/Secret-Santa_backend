@@ -11,10 +11,7 @@ async def ping():
     return {"message" : "OK"}
 
 @router.post(
-    path="/create",
-    response_model=UserRead
+    path="/login",
 )
-async def create(
-    user: User,
-):
+async def login():
     return {"message" : "OK"}
