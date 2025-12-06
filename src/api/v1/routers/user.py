@@ -6,12 +6,12 @@ from src.core.schemas import UserRead
 
 router = APIRouter()
 
-@router.get(path="/ping")
+@router.get(path='/ping')
 async def ping():
-    return {"message" : "OK"}
+    return {'message' : 'OK'}
 
 @router.post(
-    path="/login",
+    path='/login',
 )
 async def login():
-    return {"message" : "OK"}
+    return {'message' : 'OK'}

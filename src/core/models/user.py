@@ -19,15 +19,15 @@ if TYPE_CHECKING:
 
 
 class User(Base):
-    __tablename__="users"
+    __tablename__ = 'users'
     
     username: Mapped[str] = mapped_column(unique=True)
     name: Mapped[str]
     surname: Mapped[str]
     phone_number: Mapped[str] = mapped_column(String(length=11), unique=True)
     
-    room_association: Mapped[List["UserRoomAssociation"]] = relationship(
-        back_populates="room"
+    room_association: Mapped[List['UserRoomAssociation']] = relationship(
+        back_populates='room'
     )
     
     @property

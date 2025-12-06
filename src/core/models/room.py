@@ -18,13 +18,13 @@ if TYPE_CHECKING:
 
 
 class Room(Base):
-    __tablename__ = "rooms"
+    __tablename__ = 'rooms'
     
     address: Mapped[str] = mapped_column(UUID, unique=True, primary_key=True)
     created: Mapped[datetime] = mapped_column(DateTime, default=datetime.now())
     
-    user_association: Mapped[List["UserRoomAssociation"]] = relationship(
-        back_populates="user"
+    user_association: Mapped[List['UserRoomAssociation']] = relationship(
+        back_populates='user'
     )
     
     @property

@@ -9,7 +9,6 @@ from sqlalchemy.orm import (
 )
 from sqlalchemy.ext.asyncio import AsyncAttrs
 
-
 id_pk = Annotated[int, mapped_column(autoincrement=True, primary_key=True)]
 
 class Base(DeclarativeBase, AsyncAttrs):
