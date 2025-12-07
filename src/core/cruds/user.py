@@ -1,13 +1,12 @@
-from src.core.schemas import UserBase
+from sqlalchemy.ext.asyncio import AsyncSession
 
-async def create():
-    return ...
+from src.core.schemas import (
+    UserBase,
+    UserCreate,
+)
 
-async def get_by_name():
-    return ...
-
-async def login():
-    return ...
-
-async def register():
+async def create(
+    session: AsyncSession,
+    schemas: UserCreate
+    ):
     return ...
